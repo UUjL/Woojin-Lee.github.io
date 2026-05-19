@@ -18,14 +18,27 @@
 
 html {
   scroll-behavior: smooth;
+  /* Windows: reserve scrollbar space so 30/70 grid doesn't shift */
+  scrollbar-gutter: stable;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-x: clip;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 a {
@@ -161,6 +174,7 @@ img {
   line-height: 1.55;
   color: var(--muted);
   text-align: left;
+  overflow-wrap: break-word;
 }
 
 .hero-links {
@@ -417,6 +431,7 @@ img {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  overflow-wrap: anywhere;
 }
 
 .project-tags span {
