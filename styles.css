@@ -15,12 +15,12 @@
   --radius: 12px;
   --max-width: 1280px;
   --sidebar-width: 340px;
-  --header-height: 4rem; /* sticky nav anchor offset (tweak if needed) */
+  --header-height: 56px; /* fallback; JS sets exact .site-header height */
 }
 
 html {
   scroll-behavior: smooth;
-  /* Stop anchor scroll header-height ABOVE the section (not behind the bar) */
+  /* Anchor links: offset = top bar height only (set in JS) */
   scroll-padding-top: var(--header-height);
   /* Windows: reserve scrollbar space so 30/70 grid doesn't shift */
   scrollbar-gutter: stable;
@@ -29,7 +29,6 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  scroll-padding-top: var(--header-height);
   font-family:
     system-ui,
     -apple-system,
@@ -115,12 +114,6 @@ img {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1.5rem 1.5rem 3rem;
-}
-
-.sidebar > section,
-.projects-column,
-:target {
-  scroll-margin-top: var(--header-height);
 }
 
 .sidebar {
@@ -494,10 +487,6 @@ img {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  :root {
-    --header-height: 5.5rem; /* taller when nav wraps to two lines */
   }
 }
 

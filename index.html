@@ -173,5 +173,23 @@
   <footer class="site-footer">
     <p>© 2026 Woojin Lee</p>
   </footer>
+
+  <script>
+    (function () {
+      var header = document.querySelector(".site-header");
+      if (!header) return;
+      function setHeaderOffset() {
+        document.documentElement.style.setProperty(
+          "--header-height",
+          header.offsetHeight + "px"
+        );
+      }
+      setHeaderOffset();
+      window.addEventListener("resize", setHeaderOffset);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(setHeaderOffset);
+      }
+    })();
+  </script>
 </body>
 </html>
