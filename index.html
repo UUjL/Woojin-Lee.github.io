@@ -13,101 +13,145 @@
     <nav class="site-nav" aria-label="Main">
       <a href="#about">About</a>
       <a href="#education">Education</a>
+      <a href="#languages">Languages</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
     </nav>
   </header>
 
-  <main>
-    <section id="about" class="hero" aria-labelledby="about-heading">
-      <!-- Profile photo: add assets/images/profile.jpg and match src below -->
-      <img
-        class="profile-photo"
-        src="assets/images/profile.jpeg"
-        alt="Woojin Lee profile photo"
-        width="140"
-        height="140"
-      >
-      <div class="hero-text">
-        <h1 id="about-heading">Woojin Lee</h1>
-        <p class="tagline">
-          Computer Science · Data Science certificate
-        </p>
-        <p>
-          CS student at the University of Utah with a Data Science certificate (Honors College).
-          I build web apps and data projects and share my work on GitHub. I'm especially interested
-          in AI—including physical AI—and I'm looking for entry-level internships and roles in
-          software engineering, data, and AI.
-        </p>
-        <div class="hero-links">
-          <a href="mailto:leewoojin267@gmail.com">Email</a>
-          <a href="https://github.com/UUjL" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <main class="portfolio-layout">
+    <aside class="sidebar">
+      <section id="about" class="panel hero" aria-labelledby="about-heading">
+        <img
+          class="profile-photo"
+          src="assets/images/profile.jpeg"
+          alt="Woojin Lee profile photo"
+          width="120"
+          height="120"
+        >
+        <div class="hero-text">
+          <h1 id="about-heading">Woojin Lee</h1>
+          <p class="tagline">
+            Computer Science · Data Science certificate
+          </p>
+          <p class="about-bio">
+            CS student at the University of Utah with a Data Science certificate (Honors College).
+            I build web apps and data projects and share my work on GitHub. I'm especially interested
+            in AI—including physical AI—and I'm looking for entry-level internships and roles in
+            software engineering, data, and AI.
+          </p>
+          <div class="hero-links">
+            <a href="mailto:leewoojin267@gmail.com">Email</a>
+            <a href="https://github.com/UUjL" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="education" aria-labelledby="education-heading">
-      <h2 id="education-heading">Education</h2>
-      <ul class="edu-list">
-        <li class="edu-item">
-          <div class="edu-item-header">
-            <h3>University of Utah</h3>
-            <p class="edu-aside">
-              <span class="edu-location">Salt Lake City, UT</span>
-              <span class="edu-dates">Jan 2024 — May 2026</span>
+      <section id="education" class="panel" aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <ul class="edu-list">
+          <li class="edu-item">
+            <div class="edu-item-header">
+              <h3>University of Utah</h3>
+              <p class="edu-aside">
+                <span class="edu-location">Salt Lake City, UT</span>
+                <span class="edu-dates">Jan 2024 — May 2026</span>
+              </p>
+            </div>
+            <p class="edu-degree">
+              B.S. Computer Science · Data Science Certificate
             </p>
-          </div>
-          <p class="edu-degree">
-            Bachelor of Science, Computer Science · Data Science Certificate
-          </p>
-          <p class="edu-meta">
-            Cumulative GPA 3.372 / 4.0 · Major GPA 3.13 / 4.0
-          </p>
-          <p class="edu-meta">
-            Dean's List: Summer 2025, Fall 2025, Spring 2026
-          </p>
-          <p class="edu-meta edu-sub">
-            Honors College · Jan 2024 — Fall 2025
-          </p>
-        </li>
-
-        <li class="edu-item">
-          <div class="edu-item-header">
-            <h3>Southern Utah University</h3>
-            <p class="edu-aside">
-              <span class="edu-location">Cedar City, UT</span>
-              <span class="edu-dates">Jan 2019 — Dec 2023</span>
+            <p class="edu-meta">
+              Cumulative GPA 3.372 · Major GPA 3.13
             </p>
-          </div>
-          <p class="edu-degree">
-            Computer Science
-          </p>
-          <p class="edu-meta edu-sub">
-            Transferred to University of Utah, Jan 2024
-          </p>
-          <p class="edu-meta">
-            Cumulative GPA 3.774 / 4.0 · Major GPA 3.89 / 4.0
-          </p>
-          <p class="edu-meta">
-            Dean's List: Spring 2022, Spring 2023, Fall 2023
-          </p>
-        </li>
-      </ul>
-    </section>
+            <p class="edu-meta">
+              Dean's List: Summer 2025, Fall 2025, Spring 2026
+            </p>
+            <p class="edu-meta edu-sub">
+              Honors College · Jan 2024 — Fall 2025
+            </p>
+          </li>
 
-    <section id="projects" aria-labelledby="projects-heading">
+          <li class="edu-item">
+            <div class="edu-item-header">
+              <h3>Southern Utah University</h3>
+              <p class="edu-aside">
+                <span class="edu-location">Cedar City, UT</span>
+                <span class="edu-dates">Jan 2019 — Dec 2023</span>
+              </p>
+            </div>
+            <p class="edu-degree">
+              Computer Science — undergraduate coursework
+            </p>
+            <p class="edu-meta edu-sub">
+              Transferred to University of Utah, Jan 2024
+            </p>
+            <p class="edu-meta">
+              Cumulative GPA 3.774 · Major GPA 3.89
+            </p>
+            <p class="edu-meta">
+              Dean's List: Spring 2022, Spring 2023, Fall 2023
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="languages" class="panel" aria-labelledby="languages-heading">
+        <h2 id="languages-heading">Languages</h2>
+        <ul class="tag-list">
+          <li><span class="tag">English</span> <span class="tag-detail">Professional</span></li>
+          <li><span class="tag">Korean</span> <span class="tag-detail">Native</span></li>
+        </ul>
+      </section>
+
+      <section id="skills" class="panel" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+        <div class="skills-groups">
+          <div class="skills-group">
+            <h3 class="skills-label">Languages</h3>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>JavaScript</span>
+              <span>TypeScript</span>
+              <span>SQL</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <h3 class="skills-label">Frameworks &amp; tools</h3>
+            <div class="project-tags">
+              <span>FastAPI</span>
+              <span>Django</span>
+              <span>React</span>
+              <span>Next.js</span>
+              <span>Electron</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <section id="projects" class="projects-column" aria-labelledby="projects-heading">
       <h2 id="projects-heading">Projects</h2>
-      <div class="project-grid">
+      <div class="project-list">
         <article class="project-card">
-          <h3>Project name 1</h3>
+          <h3><a href="projects/notaker.html">Notaker</a></h3>
+          <p class="project-subtitle">AI-Powered Notes from Audio &amp; Transcripts</p>
+          <p class="project-dates">Sep 2025 — Apr 2026</p>
           <div class="project-tags">
             <span>Python</span>
+            <span>FastAPI</span>
+            <span>Django</span>
+            <span>Electron</span>
             <span>React</span>
+            <span>Next.js</span>
           </div>
           <p>
-            What you built, your role, and outcome (metrics or demo) in 2–3 sentences.
+            Local-first AI note-taking for desktop and web. Generates structured notes from
+            recorded and live audio using Whisper, RAG, and a FastAPI backend with Django cloud sync.
           </p>
           <div class="project-links">
-            <a href="https://github.com/UUjL/repo-name" target="_blank" rel="noopener noreferrer">Code</a>
+            <a href="projects/notaker.html">Details</a>
+            <a href="https://github.com/UUjL" target="_blank" rel="noopener noreferrer">Code</a>
           </div>
         </article>
 
@@ -118,6 +162,7 @@
           </div>
           <p>Description here.</p>
           <div class="project-links">
+            <a href="#">Details</a>
             <a href="#" target="_blank" rel="noopener noreferrer">Code</a>
           </div>
         </article>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Notaker — AI-powered notes from audio and transcripts">
+  <title>Notaker — Woojin Lee</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="../index.html">Woojin Lee</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#education">Education</a>
+      <a href="../index.html#projects">Projects</a>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <a class="back-link" href="../index.html#projects">← Back to projects</a>
+
+    <h1>Notaker</h1>
+    <p class="project-lead">AI-Powered Notes from Audio &amp; Transcripts</p>
+    <p class="project-dates">Sep 2025 — Apr 2026</p>
+
+    <div class="project-tags">
+      <span>Python</span>
+      <span>FastAPI</span>
+      <span>Django</span>
+      <span>Electron</span>
+      <span>React</span>
+      <span>Next.js</span>
+    </div>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        Notaker is a local-first AI note-taking service that generates structured notes from
+        recorded audio, live audio, and transcripts. The product ships as both a
+        <strong>desktop app</strong> and a <strong>web app</strong>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Local backend (FastAPI)</h2>
+      <p>
+        A Python FastAPI backend powers the desktop experience on the user's machine. It exposes
+        unified APIs for the Electron client, including:
+      </p>
+      <ul>
+        <li>Speech-to-text transcription with Whisper</li>
+        <li>File and SQLite synchronization</li>
+        <li>Attachment and image handling</li>
+        <li>Translation</li>
+        <li>Embedding-based search and RAG pipelines</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Cloud integration (Django)</h2>
+      <p>
+        The system connects to a remote Django server with JWT-based authentication. Proxy routing
+        was implemented so the Electron (React) client and backend services can share tokens
+        seamlessly across local and remote services.
+      </p>
+    </section>
+
+    <section>
+      <h2>Stack</h2>
+      <p>
+        <strong>Desktop:</strong> Electron, React<br>
+        <strong>Web:</strong> Next.js, React<br>
+        <strong>Local services:</strong> Python, FastAPI, SQLite, Whisper, RAG<br>
+        <strong>Remote services:</strong> Django, JWT auth
+      </p>
+    </section>
+
+    <section>
+      <h2>Try it</h2>
+      <p>
+        Live demo links for the desktop and web builds will be added here once deployed.
+        For now, see the repository for setup instructions.
+      </p>
+    </section>
+
+    <div class="project-links">
+      <a href="https://github.com/UUjL" target="_blank" rel="noopener noreferrer">Code</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Woojin Lee</p>
+  </footer>
+</body>
+</html>
