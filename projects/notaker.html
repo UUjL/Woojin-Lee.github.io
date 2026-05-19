@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Notaker — AI-powered notes from audio and transcripts">
+  <meta name="description" content="Notaker — AI-powered lecture notes from audio and transcripts">
   <title>Notaker — Woojin Lee</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
@@ -20,84 +20,181 @@
   <main class="project-page">
     <a class="back-link" href="../index.html#projects">← Back to projects</a>
 
-    <div class="project-page-header">
-      <div>
-        <h1>Notaker</h1>
-        <p class="project-lead">AI-Powered Notes from Audio &amp; Transcripts</p>
-        <p class="project-dates">Sep 2025 — Apr 2026</p>
+    <article class="project-page-card">
+      <div class="project-page-header">
+        <div>
+          <h1>Notaker</h1>
+          <p class="project-lead">AI-Powered Notes from Audio &amp; Transcripts</p>
+          <p class="project-dates">Sep 2025 — Apr 2026 · Team project (CS 4500)</p>
+        </div>
+        <img
+          class="project-logo project-logo--lg"
+          src="../assets/images/notaker-logo.png"
+          alt="Notaker logo"
+          width="72"
+          height="72"
+        >
       </div>
-      <img
-        class="project-logo project-logo--lg"
-        src="../assets/images/notaker-logo.png"
-        alt="Notaker logo"
-        width="72"
-        height="72"
-      >
-    </div>
 
-    <div class="project-tags">
-      <span>Python</span>
-      <span>FastAPI</span>
-      <span>Django</span>
-      <span>Electron</span>
-      <span>React</span>
-      <span>Next.js</span>
-    </div>
+      <div class="project-tags">
+        <span>Python</span>
+        <span>FastAPI</span>
+        <span>Django</span>
+        <span>Electron</span>
+        <span>React</span>
+        <span>Next.js</span>
+        <span>Whisper</span>
+        <span>TypeScript</span>
+      </div>
 
-    <section>
-      <h2>Overview</h2>
-      <p>
-        Notaker is a local-first AI note-taking service that generates structured notes from
-        recorded audio, live audio, and transcripts. The product ships as both a
-        <strong>desktop app</strong> and a <strong>web app</strong>.
-      </p>
-    </section>
+      <section class="project-page-section">
+        <h2>Overview</h2>
+        <p>
+          Notaker is an AI-powered note-taking application that helps students capture and organize
+          lecture content more effectively. The system converts audio recordings into structured
+          Markdown notes and supports attachments such as PDF slides and images. By generating
+          organized notes automatically, students can focus on listening and understanding in class
+          instead of writing everything by hand.
+        </p>
+        <p>
+          Our goal is to turn lecture content into clear, searchable study materials that are easy to
+          review, edit, and reuse. Notaker ships as a desktop app and a web app.
+        </p>
+      </section>
 
-    <section>
-      <h2>Local backend (FastAPI)</h2>
-      <p>
-        A Python FastAPI backend powers the desktop experience on the user's machine. It exposes
-        unified APIs for the Electron client, including:
-      </p>
-      <ul>
-        <li>Speech-to-text transcription with Whisper</li>
-        <li>File and SQLite synchronization</li>
-        <li>Attachment and image handling</li>
-        <li>Translation</li>
-        <li>Embedding-based search and RAG pipelines</li>
-      </ul>
-    </section>
+      <section class="project-page-section">
+        <h2>Problem</h2>
+        <p>
+          Taking useful notes during fast-paced lectures is hard. Students often miss details, and
+          handwritten notes are difficult to organize and search later. Transcription tools produce raw
+          text but do not structure information in a meaningful way. Students need a system that
+          organizes lecture content while preserving information from both audio and visual materials.
+        </p>
+      </section>
 
-    <section>
-      <h2>Cloud integration (Django)</h2>
-      <p>
-        The system connects to a remote Django server with JWT-based authentication. Proxy routing
-        was implemented so the Electron (React) client and backend services can share tokens
-        seamlessly across local and remote services.
-      </p>
-    </section>
+      <section class="project-page-section">
+        <h2>Solution</h2>
+        <p>
+          Notaker uses AI to generate structured notes from audio recordings and uploaded documents.
+          Users can record or upload lecture audio, generate notes, attach PDFs and images, organize
+          content in folders, edit with a custom Markdown editor, and restore deleted notes from a
+          recycle system.
+        </p>
+        <ul>
+          <li>Upload or record lecture audio</li>
+          <li>Automatically generate structured Markdown notes</li>
+          <li>Attach PDFs, images, and other supporting files</li>
+          <li>Organize notes in folders with search and embeddings</li>
+          <li>Edit notes with live preview, autosave, and version-friendly workflows</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Stack</h2>
-      <p>
-        <strong>Desktop:</strong> Electron, React<br>
-        <strong>Web:</strong> Next.js, React<br>
-        <strong>Local services:</strong> Python, FastAPI, SQLite, Whisper, RAG<br>
-        <strong>Remote services:</strong> Django, JWT auth
-      </p>
-    </section>
+      <section class="project-page-section">
+        <h2>Key features</h2>
+        <ul>
+          <li>AI-generated structured notes from audio</li>
+          <li>Custom Markdown editor with live preview and autosave</li>
+          <li>File and folder organization</li>
+          <li>Attachments for audio, PDFs, and images</li>
+          <li>Recycle and restore for deleted notes</li>
+          <li>Local transcription with Whisper</li>
+          <li>Cross-platform desktop app (Windows, macOS, Linux)</li>
+          <li>Web app (Next.js) for browser-based access</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Try it</h2>
-      <p>
-        Live demo links for the desktop and web builds will be added here once deployed.
-        For now, see the repository for setup instructions.
-      </p>
-    </section>
+      <section class="project-page-section">
+        <h2>Architecture</h2>
+        <p>
+          Notaker uses a <strong>hybrid local + cloud</strong> design: responsive processing on the
+          user's device, with cloud services for auth and AI-backed features.
+        </p>
+        <ul>
+          <li>
+            <strong>Desktop (Electron + React):</strong> Main UI for recording, editing, and organizing
+            notes. Talks to a local FastAPI service for proxying and local features.
+          </li>
+          <li>
+            <strong>Local FastAPI:</strong> Whisper speech-to-text, SQLite and file sync, attachments,
+            translation, embedding search, and RAG pipelines exposed as unified APIs.
+          </li>
+          <li>
+            <strong>Cloud (Django):</strong> JWT authentication, API endpoints, and integration with
+            AI services for note generation, study tools, and related features.
+          </li>
+          <li>
+            <strong>Web (Next.js):</strong> Browser client connected to Django for auth and
+            cloud-backed functionality.
+          </li>
+        </ul>
+        <p class="project-page-note">
+          Architecture diagram and full design documentation are maintained in our project repository.
+        </p>
+      </section>
 
-    <div class="project-links">
-      <a href="https://github.com/UUjL" target="_blank" rel="noopener noreferrer">Code</a>
-    </div>
+      <section class="project-page-section">
+        <h2>Technologies</h2>
+        <dl class="project-tech-list">
+          <dt>Frontend</dt>
+          <dd>Electron, React, Next.js, TypeScript, CodeMirror, Tailwind CSS</dd>
+          <dt>Backend</dt>
+          <dd>Python 3.11+, FastAPI, Django</dd>
+          <dt>AI &amp; processing</dt>
+          <dd>Whisper, LLM APIs, embedding models, translation models</dd>
+          <dt>Data</dt>
+          <dd>SQLite, Markdown notes, local file storage</dd>
+          <dt>Tools</dt>
+          <dd>Git, GitLab, feature-branch workflow, CI</dd>
+        </dl>
+      </section>
+
+      <section class="project-page-section">
+        <h2>My role</h2>
+        <p>
+          I worked on the <strong>backend</strong> for the Notaker desktop application:
+        </p>
+        <ul>
+          <li>Voice-to-text pipeline with Whisper (audio upload, normalization, chunking for long files)</li>
+          <li>FastAPI endpoints that orchestrate speech-to-text → structuring → flashcards and quizzes</li>
+          <li>Progress tracking, input validation, and consistent API response schemas</li>
+          <li>Integration with Django services and the local proxy layer used by the Electron client</li>
+        </ul>
+      </section>
+
+      <section class="project-page-section">
+        <h2>How it works</h2>
+        <ol class="project-steps">
+          <li><strong>Log in</strong> — Required for AI features such as note generation.</li>
+          <li><strong>Record or upload audio</strong> — Capture a lecture in the app or upload a file.</li>
+          <li><strong>Review transcription</strong> — Speech is converted to text; optional translation appears alongside.</li>
+          <li><strong>Generate notes</strong> — Structured Markdown is created from the transcript and any attached PDFs or images; embeddings are stored locally and in the database.</li>
+          <li><strong>Edit and save</strong> — Notes are saved as Markdown with autosave; rename, organize, and use recycle/restore as needed.</li>
+          <li><strong>Study tools (optional)</strong> — AI chat, quizzes, and flashcards from the note menu.</li>
+        </ol>
+      </section>
+
+      <section class="project-page-section">
+        <h2>Try it</h2>
+        <ul>
+          <li>
+            <a href="https://www.notaker.app" target="_blank" rel="noopener noreferrer">Web app</a>
+            — Sign up and use Notaker in your browser.
+          </li>
+          <li>
+            <a href="https://www.swisstransfer.com/d/8a3e3a07-4e71-4b82-9968-bb84c599a137" target="_blank" rel="noopener noreferrer">Desktop app</a>
+            — Download the Electron app for Windows, macOS, or Linux.
+          </li>
+        </ul>
+        <p class="project-page-note">
+          Troubleshooting: ensure the local FastAPI service is running for transcription; check the
+          server connection if login or cloud note generation fails.
+        </p>
+      </section>
+
+      <div class="project-page-actions">
+        <a href="https://github.com/UUjL" target="_blank" rel="noopener noreferrer">Code</a>
+      </div>
+    </article>
   </main>
 
   <footer class="site-footer">

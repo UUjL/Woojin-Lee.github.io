@@ -398,12 +398,22 @@ img {
 
 /* Project detail pages */
 .project-page {
-  max-width: 720px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 4rem;
+}
+
+.project-page-card {
+  padding: 2rem 2.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .project-page .back-link {
   display: inline-block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   font-size: 0.9375rem;
   color: var(--muted);
 }
@@ -417,7 +427,9 @@ img {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: start;
   gap: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .project-page-header .project-logo {
@@ -457,36 +469,116 @@ img {
   color: var(--muted);
 }
 
-.project-page .project-tags {
+.project-page-card .project-tags {
   margin-bottom: 2rem;
 }
 
-.project-page section h2 {
+.project-page-section h2 {
   font-size: 1.125rem;
+  font-weight: 600;
   margin: 0 0 0.75rem;
+  color: var(--text);
 }
 
-.project-page section {
-  margin-bottom: 2rem;
+.project-page-section {
+  margin-bottom: 1.75rem;
 }
 
-.project-page section p {
-  margin: 0 0 0.75rem;
-}
-
-.project-page section p:last-child {
+.project-page-section:last-of-type {
   margin-bottom: 0;
 }
 
-.project-page section ul {
+.project-page-section p {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.project-page-section p:last-child {
+  margin-bottom: 0;
+}
+
+.project-page-section ul {
   margin: 0;
   padding-left: 1.25rem;
   color: var(--muted);
   font-size: 0.9375rem;
+  line-height: 1.65;
 }
 
-.project-page section li + li {
+.project-page-section li + li {
   margin-top: 0.35rem;
+}
+
+.project-page-section ol {
+  margin: 0;
+  padding-left: 1.35rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.project-page-section ol li + li {
+  margin-top: 0.5rem;
+}
+
+.project-page-note {
+  margin-top: 0.75rem !important;
+  font-size: 0.875rem !important;
+  font-style: italic;
+}
+
+.project-tech-list {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.project-tech-list dt {
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.project-tech-list dt:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.project-tech-list dd {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.project-app-links {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+}
+
+.project-app-links a {
+  font-weight: 600;
+}
+
+.project-app-links span {
+  margin: 0 0.5rem;
+  color: var(--border);
+}
+
+.project-page-section a {
+  font-weight: 500;
+}
+
+.project-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9375rem;
 }
 
 .project-card p {
@@ -558,5 +650,13 @@ img {
   .site-nav {
     gap: 0.35rem 0.75rem;
     font-size: 0.875rem;
+  }
+
+  .project-page {
+    padding: 1rem 1rem 2.5rem;
+  }
+
+  .project-page-card {
+    padding: 1.5rem 1.25rem;
   }
 }
