@@ -434,8 +434,6 @@ img {
 }
 
 .project-page-aside {
-  position: sticky;
-  top: calc(var(--header-height, 4rem) + 1.25rem);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -767,7 +765,6 @@ img {
   }
 
   .project-page-aside {
-    position: static;
     flex-direction: row;
     flex-wrap: wrap;
   }
