@@ -333,15 +333,14 @@ img {
 }
 
 .project-card-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
   gap: 1rem;
   margin-bottom: 0.75rem;
 }
 
 .project-card-title {
-  flex: 1;
   min-width: 0;
 }
 
@@ -355,9 +354,12 @@ img {
 }
 
 .project-logo {
-  flex-shrink: 0;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
   width: 56px;
   height: 56px;
+  max-width: 56px; /* override global img { max-width: 100% } — fixes Safari/Mac wrap */
   object-fit: contain;
   border-radius: 10px;
 }
@@ -411,11 +413,17 @@ img {
 }
 
 .project-page-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
   gap: 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+.project-page-header .project-logo {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
 }
 
 .project-page-header .project-lead {
@@ -429,6 +437,7 @@ img {
 .project-logo--lg {
   width: 72px;
   height: 72px;
+  max-width: 72px;
 }
 
 .project-page h1 {
