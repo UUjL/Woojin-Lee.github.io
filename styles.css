@@ -590,6 +590,30 @@ img {
   font-weight: 500;
 }
 
+.project-poster {
+  margin: 0;
+}
+
+.project-poster img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.project-poster img:hover {
+  opacity: 0.92;
+}
+
+.project-poster figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+  text-align: center;
+}
+
 .project-page-actions {
   display: flex;
   flex-wrap: wrap;
