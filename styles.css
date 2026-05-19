@@ -14,6 +14,7 @@
   --shadow: 0 8px 24px rgba(26, 29, 38, 0.06);
   --radius: 12px;
   --max-width: 1280px;
+  --sidebar-width: 340px;
 }
 
 html {
@@ -24,7 +25,7 @@ html {
 
 body {
   margin: 0;
-  overflow-x: clip;
+  overflow-x: hidden;
   font-family:
     system-ui,
     -apple-system,
@@ -100,18 +101,22 @@ img {
   text-decoration: none;
 }
 
-/* Two-column layout: sidebar ~30% · projects ~70% */
+/* Two-column layout: fixed sidebar + fluid projects (stable on Windows) */
 .portfolio-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 1.5rem;
-  align-items: start;
+  width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1.5rem 1.5rem 3rem;
 }
 
 .sidebar {
+  flex: 0 0 var(--sidebar-width);
+  width: var(--sidebar-width);
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -302,7 +307,9 @@ img {
 
 /* Projects column */
 .projects-column {
+  flex: 1 1 0;
   min-width: 0;
+  width: 0; /* flex overflow fix for Chrome/Edge on Windows */
 }
 
 .project-list {
@@ -458,9 +465,20 @@ img {
   font-size: 0.875rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .portfolio-layout {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: none;
+  }
+
+  .projects-column {
+    flex: 1 1 auto;
+    width: 100%;
   }
 
   .site-header {
