@@ -416,10 +416,85 @@ img {
 
 .project-page {
   width: 100%;
-  max-width: 44rem;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.project-page-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+  gap: 2rem 2.5rem;
+  align-items: start;
+}
+
+.project-page-main {
+  min-width: 0;
+}
+
+.project-page-aside {
+  position: sticky;
+  top: calc(var(--header-height, 4rem) + 1.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.project-aside-block {
+  padding: 1.25rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.project-aside-block h2 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0 0 0.875rem;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.project-aside-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-aside-links li {
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.project-aside-links li:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.project-aside-links a {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-aside-links a:hover {
+  text-decoration: underline;
+}
+
+.project-aside-links span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.project-page-aside .project-poster img {
+  box-shadow: none;
 }
 
 .project-page-card {
@@ -685,6 +760,23 @@ img {
   }
 }
 
+@media (max-width: 960px) {
+  .project-page-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-page-aside {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .project-aside-block {
+    flex: 1 1 260px;
+  }
+}
+
 @media (max-width: 600px) {
   .portfolio-layout {
     padding: 1rem 1rem 2.5rem;
@@ -701,5 +793,9 @@ img {
 
   .project-page-card {
     padding: 1.5rem 1.25rem;
+  }
+
+  .project-page-aside {
+    flex-direction: column;
   }
 }

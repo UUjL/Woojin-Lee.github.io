@@ -50,20 +50,8 @@
         <span>TypeScript</span>
       </div>
 
-      <section class="project-page-section" id="poster">
-        <h2>Poster</h2>
-        <figure class="project-poster">
-          <a href="../assets/notaker/NoTaker poster.jpg" target="_blank" rel="noopener noreferrer">
-            <img
-              src="../assets/notaker/NoTaker poster.jpg"
-              alt="Notaker project poster"
-              width="800"
-              height="600"
-            >
-          </a>
-        </figure>
-      </section>
-
+      <div class="project-page-layout">
+        <div class="project-page-main">
       <section class="project-page-section">
         <h2>Overview</h2>
         <p>
@@ -189,29 +177,42 @@
           <li><strong>Study tools (optional)</strong> — AI chat, quizzes, and flashcards from the note menu.</li>
         </ol>
       </section>
+        </div>
 
-      <section class="project-page-section">
-        <h2>Try it</h2>
-        <ul>
-          <li>
-            <a href="https://capstone.cs.utah.edu/groups/notaker/-/wikis/home" target="_blank" rel="noopener noreferrer">More details</a>
-            — Full project wiki (architecture, docs, team).
-          </li>
-          <li>
-            <a href="https://www.notaker.app" target="_blank" rel="noopener noreferrer">Web app</a>
-            — Sign up and use Notaker in your browser.
-          </li>
-          <li>
-            <a href="https://www.swisstransfer.com/d/8a3e3a07-4e71-4b82-9968-bb84c599a137" target="_blank" rel="noopener noreferrer">Desktop app</a>
-            — Download the Electron app for Windows, macOS, or Linux.
-          </li>
-        </ul>
-        <p class="project-page-note">
-          Troubleshooting: ensure the local FastAPI service is running for transcription; check the
-          server connection if login or cloud note generation fails.
-        </p>
-      </section>
+        <aside class="project-page-aside" aria-label="Poster and links">
+          <section class="project-aside-block" id="poster">
+            <h2>Poster</h2>
+            <figure class="project-poster">
+              <a href="../assets/images/notaker-poster.jpg" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="../assets/images/notaker-poster.jpg"
+                  alt="Notaker project poster"
+                  width="400"
+                  height="600"
+                >
+              </a>
+            </figure>
+          </section>
 
+          <section class="project-aside-block">
+            <h2>Links</h2>
+            <ul class="project-aside-links">
+              <li>
+                <a href="https://capstone.cs.utah.edu/groups/notaker/-/wikis/home" target="_blank" rel="noopener noreferrer">More details</a>
+                <span>Project wiki</span>
+              </li>
+              <li>
+                <a href="https://www.notaker.app" target="_blank" rel="noopener noreferrer">Web app</a>
+                <span>Use in your browser</span>
+              </li>
+              <li>
+                <a href="https://www.swisstransfer.com/d/8a3e3a07-4e71-4b82-9968-bb84c599a137" target="_blank" rel="noopener noreferrer">Desktop app</a>
+                <span>Download for Win / macOS / Linux</span>
+              </li>
+            </ul>
+          </section>
+        </aside>
+      </div>
     </article>
     </div>
   </main>
@@ -219,5 +220,23 @@
   <footer class="site-footer">
     <p>© 2026 Woojin Lee</p>
   </footer>
+
+  <script>
+    (function () {
+      var header = document.querySelector(".site-header");
+      if (!header) return;
+      function setHeaderOffset() {
+        document.documentElement.style.setProperty(
+          "--header-height",
+          header.offsetHeight + "px"
+        );
+      }
+      setHeaderOffset();
+      window.addEventListener("resize", setHeaderOffset);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(setHeaderOffset);
+      }
+    })();
+  </script>
 </body>
 </html>
