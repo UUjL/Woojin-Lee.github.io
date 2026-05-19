@@ -15,7 +15,7 @@
   --radius: 12px;
   --max-width: 1280px;
   --sidebar-width: 340px;
-  --header-height: 5.5rem; /* match sticky .site-header — anchor offset */
+  --header-height: 4rem; /* sticky nav anchor offset (tweak if needed) */
 }
 
 html {
@@ -497,7 +497,7 @@ img {
   }
 
   :root {
-    --header-height: 7rem; /* taller when nav wraps to two lines */
+    --header-height: 5.5rem; /* taller when nav wraps to two lines */
   }
 }
 
